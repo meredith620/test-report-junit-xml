@@ -58,6 +58,7 @@
     {:tag :testcase
      :attrs {:classname (-> var-meta :ns ns-name)
              :name (:name var-meta)
+             :assertions (-> test-var :results count)
              :time (-> test-var :time nanos->secs)}
      :content (keep *format-result* (:results test-var))}))
 
